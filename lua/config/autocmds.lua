@@ -106,6 +106,14 @@ local function sync_colorcolumn(bufnr)
   vim.wo.colorcolumn = tostring(tw)
 end
 
+-- Disable spell on markdown/text/gitcommit (LazyVim enables it by default)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit" },
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "FileType", "OptionSet" }, {
   callback = function(args)
     if args.event == "OptionSet" and args.match ~= "textwidth" then
