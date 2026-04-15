@@ -1,30 +1,23 @@
+-- Codeium (Windsurf) AI completion source for blink.cmp.
+-- To re-enable codeium:
+--   1. Run `:LazyExtras` and activate `lazyvim.plugins.extras.ai.codeium`.
+--   2. Uncomment the `dependencies`, `providers` and the `codeium` entry in
+--      `sources.default` below.
 return {
   "saghen/blink.cmp",
-  dependencies = {
-    {
-      "Exafunction/codeium.nvim",
-    },
-  },
+  -- dependencies = {
+  --   {
+  --     "Exafunction/codeium.nvim",
+  --   },
+  -- },
   opts = {
     keymap = { preset = "super-tab" },
     completion = { documentation = { auto_show = false } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "codeium" },
-      providers = {
-        codeium = { name = "Codeium", module = "codeium.blink", async = true },
-      },
+      default = { "lsp", "path", "snippets", "buffer" --[[ , "codeium" ]] },
+      -- providers = {
+      --   codeium = { name = "Codeium", module = "codeium.blink", async = true },
+      -- },
     },
   },
-  -- "Exafunction/codeium.nvim",
-  -- opts = {
-  --   enable_cmp_source = vim.g.ai_cmp,
-  --   virtual_text = {
-  --     enabled = not vim.g.ai_cmp,
-  --     key_bindings = {
-  --       accept = true,
-  --       next = "<C-s>",
-  --       prev = "<C-f>",
-  --     },
-  --   },
-  -- },
 }
