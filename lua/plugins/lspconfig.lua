@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    version = "*",
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options

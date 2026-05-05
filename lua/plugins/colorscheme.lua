@@ -1,6 +1,7 @@
 return {
   {
     "loctvl842/monokai-pro.nvim",
+    version = "*",
     opts = {
       transparent_background = true,
       override = function(c)
