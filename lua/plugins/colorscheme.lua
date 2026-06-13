@@ -1,7 +1,9 @@
 return {
   {
     "loctvl842/monokai-pro.nvim",
-    version = "*",
+    -- Pin exacto: v2.1.2+ mapea NormalFloat a editorSuggestWidget (fondo gris)
+    -- y rompe transparent_background. No usar `version = "*"`.
+    version = "v2.1.1",
     opts = {
       transparent_background = true,
       override = function(c)
